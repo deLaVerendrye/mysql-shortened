@@ -4,13 +4,13 @@ import mysql.connector
 
 class Connection():
 
-    def __init__(self, host='localhost', user='root', password='', db=''):
-        if db != '':
+    def __init__(self, host='localhost', user='root', password='', database=''):
+        if database != '':
             self.conn = mysql.connector.connect(
                 host = host,
                 user = user,
                 password = password,
-                database = db
+                database = database
             )
         else:
             self.conn = mysql.connector.connect(
