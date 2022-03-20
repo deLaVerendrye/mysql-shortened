@@ -24,16 +24,16 @@ to create a connection to your database
 you can use the Connection() Method
 
 ```
-import mcsv
+import mcsv as mysql
 
-mydb = mcsv.Connection(
+mydb = mysql.Connection(
     host='localhost',
     user='root',
     password='',
 )
 ```
 
-**To check the connection you can use the CheckConnection() method
+**To check the connection you can use the CheckConnection() method**
 ```
 print(mydb.CheckConnection())
 ```
@@ -61,9 +61,9 @@ query = mydb.query('SELECT * FROM users')
 print(query)
 
 ```
-**When you use SELECT in query() it will return the results, If you are using it to INSERT or CREATE it will return 0 if successful
+**When you use SELECT in query() it will return the results, If you are using it to INSERT or CREATE it will return 0 if successful**
 
-##queryMultiple
+## queryMultiple
 The queryMultiple() method can be use to INSERT multiple data at once
 ```
 mydb = mysql.Connection(
