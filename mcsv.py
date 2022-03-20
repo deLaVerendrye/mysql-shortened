@@ -1,5 +1,3 @@
-from ast import Raise
-from distutils.log import error
 import mysql.connector
 
 class Connection():
@@ -29,21 +27,18 @@ class Connection():
     def query(self, query):
         try:
             if query.find('INSERT') == 0:
-                    self.mycursor.execute(query)
-                    self.conn.commit()
-                    return self.mycursor.rowcount, 'record inserted'
+                self.mycursor.execute(query)
+                self.conn.commit()
+                return self.mycursor.rowcount, 'record inserted'
             elif query.find('CREATE') == 0:
-                try:
-                    self.mycursor.execute(query)
-                    return 0
-                except:
-                    raise Exception(self.syntaxError)
+                self.mycursor.execute(query)
+                return 0
             else:
-                    result = []
-                    self.mycursor.execute(query)
-                    for i in self.mycursor:
-                        result.append(i)
-                    return result
+                result = []
+                self.mycursor.execute(query)
+                for i in self.mycursor:
+                    result.append(i)
+                return result
         except:
             raise Exception(self.syntaxError)
         
