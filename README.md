@@ -33,7 +33,7 @@ mydb = mcsv.Connection(
 )
 ```
 
-** To check the connection you can use the CheckConnection() method
+**To check the connection you can use the CheckConnection() method
 ```
 print(mydb.CheckConnection())
 ```
@@ -43,4 +43,44 @@ If the result is something like this:
 ```
 It means you are connected
 
-## Create Database
+
+## Queries
+To make queries to the database, you can use the query() method
+```
+import mcsv as mysql
+
+mydb = mysql.Connection(
+    host='localhost',
+    user='root',
+    password='',
+    Database='mydatabasee'
+)
+
+query = mydb.query('SELECT * FROM users')
+
+print(query)
+
+```
+**When you use SELECT in query() it will return the results, If you are using it to INSERT or CREATE it will return 0 if successful
+
+##queryMultiple
+The queryMultiple() method can be use to INSERT multiple data at once
+```
+mydb = mysql.Connection(
+    host='localhost',
+    user='root',
+    password='',
+    Database='mydatabasee'
+)
+
+query = mydb.queryMultiple(
+    'INSERT INTO users (name, adress) VALUES (%s, %s)',
+    [
+        ('John', 'HIGHWAY 21'),
+        ('William', 'Central st 954'),
+        ('Betty', 'Green Grass 1')
+    ]
+    )
+
+print(query)
+```
