@@ -1,6 +1,5 @@
 # mysql-shortened
 
-Simple module to reduce that shortens the syntax of mysql-connector
 
 ## How to use
 
