@@ -32,7 +32,7 @@ mydb = mysql.Connection(
 )
 ```
 
-**To check the connection you can use the CheckConnection() method**
+**To check the connection you can use the CheckConnection() function**
 ```
 print(mydb.CheckConnection())
 ```
@@ -44,7 +44,7 @@ It means you are connected
 
 
 ## Queries
-To make queries to the database, you can use the query() method
+To make queries to the database, you can use the query() function
 ```
 import mcsv as mysql
 
