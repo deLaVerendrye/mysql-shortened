@@ -20,7 +20,7 @@ If you already have the mysql-connector module, then there is no need to install
 ## Create Connection
 
 to create a connection to your database
-you can use the Connection() Method
+you can use the Connection() function
 
 ```
 import mcsv as mysql
